@@ -1,5 +1,5 @@
 {
-  "name": "bordeom_randomizer",
+  "name": "Boredom_randomizer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "express": "^5.2.1"

@@ -1,4 +1,5 @@
-import express from 'express'
+import express from 'express';
+import * as db from "./Database/database.js";
 
 const app = express();
 const port = 4000;
@@ -13,3 +14,16 @@ app.use(express.static("frontend"))
 app.listen(port, () => {
     console.log("it works")
 })
+
+
+//get all data and send the to the frontend in json file 
+app.get("/activities", (req, res) => {
+    const stuff = db.prepare("SELECT * FROM Stuff").all();
+
+    res.json(stuff);
+});
+
+
+
+
+

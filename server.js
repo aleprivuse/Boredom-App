@@ -18,9 +18,9 @@ app.listen(port, () => {
 
 //get all data and send the to the frontend in json file 
 app.get("/activities", (req, res) => {
-    const stuff = db.prepare("SELECT * FROM Stuff").all();
+    const activities = db.getActivities();
 
-    res.json(stuff);
+    res.json(activities);
 });
 
 

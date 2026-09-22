@@ -21,13 +21,18 @@ export function addActivity(activity, category, duration) {
     `).run(activity, category, duration);
 
 }
-
+//delete file 
 export function Delete(){
     db.prepare("DELETE FROM Stuff").run();
 
     console.log("all good")
 }
 
+
+//add shows the activites
+export function getActivities() {
+    return db.prepare("SELECT * FROM Stuff").all();
+}
 
 
 export default db

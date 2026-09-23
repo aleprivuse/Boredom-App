@@ -1,17 +1,15 @@
-
 let Stuff = document.getElementById("stuffToDo")
-let Btn = document.getElementById("Btn")
-let activity;  
+let Btn = document.getElementById("Btn")  
 
 async function activities(){  
     const data = await fetch("http://localhost:4000/activities");
     const DataActivity = await data.json();
-    activity = DataActivity
+    return DataActivity
 }
 
 
 async function randomizer() {
-    await activities()
+    const activity = await activities()
     const randomIndex = Math.floor(Math.random() * activity.length);
     const randomActivity = activity[randomIndex];
     return randomActivity

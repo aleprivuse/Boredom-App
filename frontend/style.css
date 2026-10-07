@@ -1,3 +1,38 @@
+body {
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+h1{
+    margin-top: 20px;
+    font-size: 40px;
+    color: #3D2B1F;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+}
+
+#open-Modal-Btn{
+    font-size: 30px;
+    font-family :'Times New Roman'," Times", "serif"; 
+    font-weight: 900;
+    background-color: #E89B3C;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#open-Modal-Btn:hover{
+    background-color: #C97924;
+    transform: scale(1.05);
+}
+
 .modal {
     position: fixed;
     inset: 0;
@@ -23,6 +58,8 @@
     border-color: black;
     border-width: 3px;
     text-align: center;
+
+    
 
 
 }

@@ -5,7 +5,6 @@ const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("closeBtn");
 
 
-
 // fetch the activites
 async function activities(){  
     const data = await fetch("http://localhost:4000/activities");
@@ -23,16 +22,14 @@ async function randomizer() {
 
 //display it
 async function Display() {
-    let randomActivity =  await randomizer()
-    alert(randomActivity.activity)
+    let randomActivity = await randomizer()
+    Stuff.innerText = randomActivity.activity
+    modal.style.display = "flex"
 
 }
 
 // make the Pop up appear
-openBtn.addEventListener("click", () => {
-    modal.style.display = "flex";
-});
-
+openBtn.addEventListener("click", Display);
 
 // make the Pop up dissapear
 closeBtn.addEventListener("click", () => {

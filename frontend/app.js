@@ -1,9 +1,15 @@
-let Stuff = document.getElementById("stuffToDo")
-let Btn = document.getElementById("Btn")  
-const openBtn = document.getElementById("open-Modal-Btn");
+let Stuff = document.getElementById("stuffToDo") 
+const openModalBtn = document.getElementById("open-Modal-Btn");
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("closeBtn");
+let displayActivity = document.getElementById("displaying-activity")
+const spinActivity = document.getElementById("spinActivity")
 
+
+openModalBtn.disabled = true
+
+// variable i use to store both display and Pop Up
+let activityDisplay = ""
 
 // fetch the activites
 async function activities(){  
@@ -20,21 +26,38 @@ async function randomizer() {
     return randomActivity
 }
 
-//display it
-async function Display() {
-    let randomActivity = await randomizer()
-    Stuff.innerText = randomActivity.activity
+
+
+//display the Pop up
+async function displayPopUp() {
+    Stuff.innerText = activityDisplay.activity
     modal.style.display = "flex"
 
 }
 
+//display the activity
+async function displayTheActivity(){
+    let count = 0
+    while(count < 10){
+        activityDisplay = await randomizer()
+        displayActivity.innerText = activityDisplay.activity
+        count++ 
+    }
+    openModalBtn.disabled = false
+
+    return activityDisplay
+
+}
+
+
+
+
 // make the Pop up appear
-openBtn.addEventListener("click", Display);
+openModalBtn.addEventListener("click", displayPopUp);
 
 // make the Pop up dissapear
 closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-
-Btn.addEventListener("click", Display)
+spinActivity.addEventListener("click", displayTheActivity)

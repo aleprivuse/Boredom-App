@@ -9,27 +9,32 @@ h1{
     color: #3D2B1F;
 }
 
-#content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40vh;
-}
-
-#open-Modal-Btn{
-    font-size: 30px;
+button{
+    font-size: 25px;
     font-family :'Times New Roman'," Times", "serif"; 
     font-weight: 900;
-    background-color: #E89B3C;
+
+    background-color: #D99138;
     color: white;
+    
     border: none;
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#open-Modal-Btn:hover{
-    background-color: #C97924;
+button:disabled{
+    opacity: 0,5;
+    cursor: not-allowed;
+    background-color: #B5B5B5;
+}
+
+button:not(:disabled){
+    cursor: pointer;
+}
+
+button:hover:not(:disabled){
+    background-color: #E89B3C;
     transform: scale(1.05);
 }
 
@@ -74,4 +79,28 @@ h1{
 
     font-size: 20px;
     cursor: pointer;
+
+    color: black;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30vh;
+}
+
+#Btn{
+    display: flex;
+    gap: 20px;
+}
+
+#displaying-activity{
+    display: inline-block;
+    color: black;
+    font-size: 40px;
+    margin-bottom: px;
+    transform: translateY(-60px);
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
 }
